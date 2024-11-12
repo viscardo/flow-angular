@@ -1,0 +1,43 @@
+<f-flow fDraggable>
+  <f-canvas>
+    <f-connection [fReassignDisabled]="true"
+                  fOutputId="fOutput1" fInputId="fInput2"
+                  fBehavior="floating">
+    </f-connection>
+    <f-connection [fReassignDisabled]="true"
+                  fOutputId="fOutput2" fInputId="fInput3"
+                  fBehavior="floating">
+    </f-connection>
+    <f-connection [fReassignDisabled]="true"
+                  fOutputId="fOutput3" fInputId="fInput4"
+                  fBehavior="floating">
+    </f-connection>
+    <f-connection [fReassignDisabled]="true"
+                  fOutputId="fOutput4" fInputId="fOutput1"
+                  fBehavior="floating">
+    </f-connection>
+
+    <div fNode fDragHandle [fNodePosition]="{ x: 0, y: 0 }" class="f-node">
+      I'm node 1
+      <div fNodeOutput fOutputId="fOutput1" class="right f-node-connector"></div>
+      <div fNodeInput fInputId="fInput1" class="left f-node-connector"></div>
+    </div>
+    
+    <div fNode fDragHandle [fNodePosition]="{ x: 200, y: 0 }" class="f-node">
+      I'm node 2
+      <div fNodeOutput fOutputId="fOutput2" class="right f-node-connector"></div>
+      <div fNodeInput fInputId="fInput2" class="left f-node-connector"></div>
+    </div>
+    <div fNode fDragHandle [fNodePosition]="{ x: 400, y: 0 }" class="f-node">
+      I'm node 3
+      <div fNodeOutput fOutputId="fOutput3" class="bottom f-node-connector"></div>
+      <div fNodeInput fInputId="fInput3" class="top f-node-connector"></div>
+    </div>
+
+    <div fNode fDragHandle [fNodePosition]="{ x: 250, y: 200 }" fNodeOutput fOutputId="fOutput4" class="f-node">
+      I'm node with host connector
+      <div fNodeInput fInputId="fInput4" class="top f-node-connector"></div>
+    </div>
+    
+  </f-canvas>
+</f-flow>
